@@ -1,10 +1,10 @@
 import './App.css';
-import Start from './comps/start';
+import AppParent from './comps/appParent';
 
 function App() {
   return (
     <div className="App">
-      <Start />
+      <AppParent />
     </div>
   );
 }
