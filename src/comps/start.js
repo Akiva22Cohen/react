@@ -2,8 +2,13 @@ import React from "react";
 
 function Start() {
   return (
-    <div className="Start">
-      <h2 className='text-bg-danger'>start!</h2>
+    <div className="container-fluid">
+      <div className="container">
+        <header style={{ height: '10vh' }}>header</header>
+        <div>
+          <h2 className='text-bg-danger'>start!</h2>
+        </div>
+      </div>
     </div>
   );
 }
