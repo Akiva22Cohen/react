@@ -1,5 +1,6 @@
 import './App.css';
-import Start from './comps/start';
+import Start from './components/start';
+
 
 function App() {
   return (
