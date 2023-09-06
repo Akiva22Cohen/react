@@ -15,7 +15,7 @@ function Start() {
       return;
     }
 
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city1}&APPID=e9b63c1f83f8fb4ec6ec3f0411122dd6&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&APPID=e9b63c1f83f8fb4ec6ec3f0411122dd6&units=metric`;
     try {
       const resp = await axios.get(url);
       setInfo(resp.data);
