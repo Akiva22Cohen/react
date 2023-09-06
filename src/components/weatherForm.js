@@ -1,12 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 
-function WeatherForm({ setCity }) {
-    // const [city, setCity] = useState();
+function WeatherForm({ appSetCity }) {
     const refInput = useRef();
 
     const cityInput = () => {
-        setCity(refInput.current.value);
-        console.log(setCity);
+        appSetCity(refInput.current.value);
     }
 
     return (

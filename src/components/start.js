@@ -5,24 +5,35 @@ import axios from "axios";
 
 function Start() {
   const [info, setInfo] = useState();
-  const [city, setCity] = useState('Netanya');
 
   useEffect(() => {
-    doApi(city);
-    console.log(setCity);
+    doApi('Netanya');
   }, []);
 
-  const doApi = async city => {
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},&APPID=e9b63c1f83f8fb4ec6ec3f0411122dd6&&units=metric`;
-    const resp = await axios.get(url);
-    setInfo(resp.data);
+  const doApi = async city1 => {
+    if (!city1) {
+      return;
+    }
+
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city1}&APPID=e9b63c1f83f8fb4ec6ec3f0411122dd6&units=metric`;
+    try {
+      const resp = await axios.get(url);
+      setInfo(resp.data);
+    } catch (error) {
+
+    }
+  }
+
+
+  const appSetCity = city2 => {
+    doApi(city2);
   }
 
   return (
     <div className="container-fluid p-0">
       <header style={{ minHeight: '10vh' }}>
         <WeatherForm
-          setCity={setCity}
+          appSetCity={appSetCity}
         />
       </header>
       <div className="container">
