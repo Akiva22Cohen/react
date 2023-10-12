@@ -15,7 +15,7 @@ function Start() {
       return;
     }
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&APPID=e9b63c1f83f8fb4ec6ec3f0411122dd6&units=metric`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city1}&APPID=e9b63c1f83f8fb4ec6ec3f0411122dd6&units=metric`;
     try {
       const resp = await axios.get(url);
       setInfo(resp.data);
@@ -30,18 +30,23 @@ function Start() {
   }
 
   return (
-    <div className="container-fluid p-0">
-      <header style={{ minHeight: '10vh' }}>
+    <>
+      <header className="text-bg-warning">
         <WeatherForm
           appSetCity={appSetCity}
         />
       </header>
-      <div className="container">
-        <div>
-          {(info && <WeatherInfo info={{ ...info }} />) || (<div className="h2 text-center">Loading...</div>)}
+      <div className="container-fluid">
+        <div className="container">
+          <div>
+            {
+              (info && <WeatherInfo info={{ ...info }} />) ||
+              (<div className="h2 text-center">Loading...</div>)
+            }
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

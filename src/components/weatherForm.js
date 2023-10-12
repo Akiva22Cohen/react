@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
 
 function WeatherForm({ appSetCity }) {
     const refInput = useRef();
@@ -8,13 +8,14 @@ function WeatherForm({ appSetCity }) {
     }
 
     return (
-        <nav className='text-bg-warning p-md-3 p-sm-2 p-1'>
-            <div className='container d-flex justify-content-around'>
-                <div className='logo col-auto'>
+        <nav className='p-md-3 p-sm-2 p-1'>
+            <div className='container d-flex justify-content-between'>
+                <div className='logo col-auto me-1'>
                     <h2>Weather</h2>
                 </div>
-                <div className='d-flex btn-group'>
+                <div className='d-flex'>
                     <input
+                        onKeyDown={e => (e.key === 'Enter') && cityInput()}
                         type='search'
                         placeholder='search for town weather...'
                         className='form-control rounded-end-0'
@@ -22,7 +23,7 @@ function WeatherForm({ appSetCity }) {
                     />
                     <button
                         onClick={cityInput}
-                        className='btn btn-dark'
+                        className='btn btn-dark rounded-start-0'
                     >
                         search
                     </button>
