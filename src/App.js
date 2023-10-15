@@ -1,12 +1,12 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Start from './components/start';
 
-
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Start />
-    </div>
+    </BrowserRouter>
   );
 }
 
