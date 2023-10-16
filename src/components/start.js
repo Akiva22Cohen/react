@@ -21,7 +21,6 @@ function Start() {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&APPID=e9b63c1f83f8fb4ec6ec3f0411122dd6&units=metric`;
     try {
       const resp = await axios.get(url);
-      console.log(resp);
       setInfo(resp.data);
     } catch (error) {
       setInfo({ error: 'No information exists in the system' });
@@ -40,10 +39,10 @@ function Start() {
               info ?
                 (info.error &&
                   <h2 className="text-center p-0 mt-5">{info.error}</h2>) ||
-                (<WeatherInfo info={{ ...info }} /> &&
-                  <Map info={{ ...info }} />) :
+                (<WeatherInfo info={{ ...info }} />) :
                 <div className="h2 text-center">Loading...</div>
             }
+            <Map />
           </div>
         </div>
       </div >

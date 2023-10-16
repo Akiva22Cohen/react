@@ -15,7 +15,7 @@ function WeatherForm() {
 
     return (
         <nav className='text-bg-warning p-md-3 p-sm-2 p-1'>
-            <div className='container d-sm-flex justify-content-between'>
+            <div className='container d-flex flex-wrap justify-content-between'>
                 <div className='logo col-auto'>
                     <h2 className='text-success'>
                         Weather
@@ -25,7 +25,7 @@ function WeatherForm() {
                         />
                     </h2>
                 </div>
-                <div className='d-flex justify-content-end'>
+                <div className='d-flex justify-content-end align-items-center'>
                     <input
                         list='datalist'
                         onKeyDown={e => e.key === 'Enter' && cityInput()}
