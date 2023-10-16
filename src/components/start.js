@@ -3,7 +3,6 @@ import WeatherForm from "./weatherForm";
 import WeatherInfo from "./weatherInfo";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import Map from "./map";
 
 function Start() {
   const [info, setInfo] = useState();
@@ -39,10 +38,9 @@ function Start() {
               info ?
                 (info.error &&
                   <h2 className="text-center p-0 mt-5">{info.error}</h2>) ||
-                (<WeatherInfo info={{ ...info }} />) :
+                <WeatherInfo info={{ ...info }} /> :
                 <div className="h2 text-center">Loading...</div>
             }
-            <Map />
           </div>
         </div>
       </div >

@@ -14,7 +14,7 @@ function WeatherForm() {
     }
 
     return (
-        <nav className='text-bg-warning p-md-3 p-sm-2 p-1'>
+        <nav className='container-fluid text-bg-warning p-md-3 p-sm-2 p-1'>
             <div className='container d-flex flex-wrap justify-content-between'>
                 <div className='logo col-auto'>
                     <h2 className='text-success'>
