@@ -7,7 +7,7 @@ import { useSearchParams } from "react-router-dom";
 function Start() {
   const [info, setInfo] = useState();
   const [query] = useSearchParams();
-
+  let d = 'is chanch';
   useEffect(() => {
     doApi(query.get('q') || 'israel');
   }, [query]);
